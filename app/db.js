@@ -14,6 +14,13 @@ const addMovie = ({ title, year }) => {
   movies.push(m);
   return m;
 };
+const addbyid = ({}) => {
+  const idx = movies.findIndex((m) => m.id == id);
+  if (idx === -1) {
+    return null;
+  }
+  return movies[idx];
+};
 
 const updateMovie = ({ id, payload }) => {
   const idx = movies.findIndex((m) => m.id == id);
@@ -43,4 +50,5 @@ module.exports = {
   addMovie,
   updateMovie,
   deleteMovie,
+  addbyid,
 };
